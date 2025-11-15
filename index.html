@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tronex Engineering | Technology & Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tronex Engineering - 기술과 컨설팅을 기반으로 한 엔지니어링 비즈니스 파트너" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --accent: #0080ff;
+      --muted: #777777;
+      --border: #e5e5e5;
+      --max-width: 960px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .eyebrow, .kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    h1,h2,h3 { font-weight: 600; }
+    h1 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      margin-bottom: 1rem;
+    }
+    h2 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    p { font-size: 0.95rem; color: #333; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0,3fr) minmax(0,2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-tagline {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: var(--accent);
+    }
+    .hero-panel {
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .hero-panel-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .hero-panel-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .hero-panel-label { color: var(--muted); }
+    .hero-panel-value { text-align: right; }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: #444;
+    }
+
+    .section-header { margin-bottom: 1.5rem; }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.4fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    .list-item-title {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .card-title { font-weight: 500; margin-bottom: 0.4rem; }
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-block {
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0,2fr) minmax(0,1.5fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .contact-row { font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.1rem;
+    }
+    .contact-value { font-weight: 500; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.85rem;
+      cursor: pointer;
+      background-color: var(--accent);
+      color: #fff;
+      margin-top: 0.75rem;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--accent);
+      margin-left: 0.5rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .hero, .two-col, .grid-3, .contact-block {
+        grid-template-columns: minmax(0,1fr);
+      }
+      header { position: static; }
+      .nav-links { display: none; }
+      main { padding-top: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="logo">TRONEX ENGINEERING</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#edge">Edge</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="top">
+      <div class="hero">
+        <div>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Technology & Consulting Studio</span>
+          </div>
+          <h1>엔지니어링 기반<br>기술·컨설팅 파트너</h1>
+          <p class="hero-tagline">
+            Tronex Engineering은 기술 이해와 비즈니스 감각을 결합하여,<br>
+            데이터·시스템·프로세스를 정교하게 설계하고 실행하는 엔지니어링
+            컨설팅 파트너입니다.
+          </p>
+          <p class="hero-meta">
+            복잡한 기술 이슈를 사업 관점에서 재구성하고,<br>
+            실행 가능한 아키텍처와 개선안을 제안합니다.
+          </p>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="hero-panel-title">Tronex Engineering Snapshot</div>
+          <div class="hero-panel-row">
+            <div class="hero-panel-label">Domain</div>
+            <div class="hero-panel-value">Technology · Engineering · Consulting</div>
+          </div>
+          <div class="hero-panel-row">
+            <div class="hero-panel-label">Focus</div>
+            <div class="hero-panel-value">기술 전략 · 시스템 구조 설계 · 운영 최적화</div>
+          </div>
+          <div class="hero-panel-row">
+            <div class="hero-panel-label">Approach</div>
+            <div class="hero-panel-value">데이터 기반 · 엔지니어링 사고 · 미니멀 구현</div>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Architecture Review</span>
+            <span class="chip">Technical Due Diligence</span>
+            <span class="chip">Process Optimization</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <div class="kicker">About</div>
+        <h2>기술을 비즈니스 언어로 번역하는 엔지니어링 컨설팅</h2>
+      </div>
+      <div class="two-col">
+        <div>
+          <p>
+            Tronex Engineering은 “기술 구조를 이해하는 컨설턴트”이자
+            “비즈니스 임팩트를 계산하는 엔지니어”를 지향합니다.
+            기술 스택, 인프라 구조, 운영 프로세스를 단순 나열하는 대신,
+            <strong>사업 관점에서 무엇을 바꿔야 가치가 발생하는지</strong>에 집중합니다.
+          </p>
+          <br>
+          <p>
+            조직의 제약조건(예산, 인력, 기존 시스템)을 고려하여
+            과도한 리플랫폼 대신 <strong>실행 가능한 범위의 미니멀한 개선안</strong>을
+            설계·제안합니다.
+          </p>
+        </div>
+        <div class="list">
+          <div>
+            <div class="list-item-title">역량 포지셔닝</div>
+            <p>
+              · 시스템·인프라·데이터 구조를 한 번에 조망하는 구조적 사고<br>
+              · 현업 관점에서의 운영 부담, 인력 구조를 함께 고려하는 현실적 제안
+            </p>
+          </div>
+          <div>
+            <div class="list-item-title">일하는 방식</div>
+            <p>
+              · 문서 중심이 아닌, 실제 운영에 바로 반영 가능한 아키텍처/프로세스 제안<br>
+              · “지속 가능한 구조”를 전제로 한 최소 변경·최대 효과 지향
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-header">
+        <div class="kicker">Services</div>
+        <h2>Tronex Engineering 핵심 서비스</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-tag">Architecture & System Review</div>
+          <div class="card-title">기술 아키텍처 진단</div>
+          <p>
+            기존 시스템·인프라 구조를 진단하고, 확장성·안정성·운영 효율 관점에서
+            개선 포인트를 정의합니다. 과도한 재개발 대신 단계적 전환 로드맵을
+            제시합니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Process & Operation</div>
+          <div class="card-title">엔지니어링 프로세스 설계</div>
+          <p>
+            개발·운영·모니터링·리포팅 전 과정을 구조화하여,
+            조직이 일관된 방식으로 일할 수 있도록 표준 프로세스와
+            체크리스트를 설계합니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Tech Strategy & Advisory</div>
+          <div class="card-title">기술 전략·자문</div>
+          <p>
+            신규 서비스 도입, 시스템 전환, 벤더 선정 등 기술 의사결정 과정에서
+            구조화된 검토 프레임과 의사결정 기준을 제공합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDGE -->
+    <section id="edge">
+      <div class="section-header">
+        <div class="kicker">Why Tronex</div>
+        <h2>Tronex Engineering의 차별점</h2>
+      </div>
+      <div class="two-col">
+        <div class="list">
+          <div>
+            <div class="list-item-title">기술이 아닌 비즈니스 중심의 엔지니어링</div>
+            <p>
+              기술 스택·툴 도입 여부보다, 실제 손익·운영 효율·리스크 관점에서
+              의미 있는 선택에 우선순위를 둡니다.
+            </p>
+          </div>
+          <div>
+            <div class="list-item-title">미니멀 구조 지향</div>
+            <p>
+              “될 수 있으면 덜 바꾸고, 꼭 필요한 것만 바꾼다”는 원칙으로
+              유지관리 가능한 설계를 지향합니다.
+            </p>
+          </div>
+        </div>
+        <div class="list">
+          <div>
+            <div class="list-item-title">실행을 전제로 한 산출물</div>
+            <p>
+              운영 조직이 실제로 사용할 수 있는 구조도·체크리스트·플레이북 형태의
+              산출물을 제공합니다.
+            </p>
+          </div>
+          <div>
+            <div class="list-item-title">엔지니어와 경영진 사이의 인터페이스</div>
+            <p>
+              기술팀과 경영진/사업부 사이의 커뮤니케이션 격차를 줄이고,
+              공통 언어를 만드는 역할에 강점을 둡니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="kicker">Contact</div>
+        <h2>프로젝트·자문 문의</h2>
+      </div>
+
+      <div class="contact-block">
+        <div>
+          <p>
+            Tronex Engineering과의 협업·자문·프로젝트 논의는 아래 연락 채널로
+            문의 주시면 검토 후 회신드립니다.
+          </p>
+          <button class="btn" onclick="window.location.href='mailto:contact@tronexengineering.co.kr';">
+            이메일로 문의하기
+          </button>
+          <button class="btn btn-outline" onclick="window.location.href='#top';">
+            맨 위로
+          </button>
+        </div>
+        <div>
+          <div class="contact-row">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">contact@tronexengineering.co.kr</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Seoul, Republic of Korea</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Focus Area</div>
+            <div class="contact-value">
+              Technology Architecture · Engineering Process · Technical Advisory
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Tronex Engineering. All rights reserved.</div>
+      <div>Technology & Consulting Studio</div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

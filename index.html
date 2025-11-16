@@ -881,53 +881,86 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
-        <div class="kicker">Contact</div>
-        <h2>Let’s map your engineering system together</h2>
-        <p>
-          Share a brief description of your stack, team, and what you are
-          considering – a re-platform, consolidation, or just a second opinion.
-          We’ll respond with suggested next steps and whether Tronex
-          Engineering is the right fit.
-        </p>
-      </div>
+   <section id="contact">
+  <div class="section-header">
+    <div class="kicker">Contact</div>
+    <h2>Let’s map your engineering system together</h2>
+    <p>
+      Share a brief description of your stack, team, and what you are
+      considering – a re-platform, consolidation, or just a second opinion.
+      We’ll respond with suggested next steps and whether Tronex
+      Engineering is the right fit.
+    </p>
+  </div>
 
-      <div class="contact-block">
-        <div>
-          <p>
-            Send a short note with context, diagrams if you have them, and any
-            timelines or constraints you’re working with. We usually respond
-            within two business days.
-          </p>
-          <div style="margin-top: 0.9rem;">
-            <a href="mailto:contact@tronexengineering.co.kr" class="btn btn-primary">
-              Email Tronex Engineering
-              <span class="chevron">↗</span>
-            </a>
-            <a href="#top" class="btn btn-secondary" style="margin-left:0.4rem;">
-              Back to top
-            </a>
-          </div>
-        </div>
-        <div>
-          <div class="contact-row">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">contact@tronexengineering.co.kr</div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Typical engagement</div>
-            <div class="contact-value">
-              Architecture review · Operating model design · Technical advisory
-            </div>
-          </div>
+  <div class="contact-block">
+    <!-- LEFT: 설명 + 폼 -->
+    <div>
+      <p>
+        Send a short note with context, diagrams if you have them, and any
+        timelines or constraints you’re working with. We usually respond
+        within two business days.
+      </p>
+
+      <!-- 이 폼이 humx1610@gmail.com 으로 전송됩니다 -->
+      <form
+        action="https://formsubmit.co/humx1610@gmail.com"
+        method="POST"
+        style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 360px;"
+      >
+        <!-- 봇/스팸 방지용 숨김 필드 -->
+        <input type="text" name="_honey" style="display:none">
+
+        <!-- formsubmit 기본 캡차 비활성화 -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- 전송 후 리다이렉트 위치 (지금은 다시 Contact 섹션으로) -->
+        <input type="hidden" name="_next" value="https://tronexengineering.co.kr#contact">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Work email"
+          required
+          style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+        />
+        <textarea
+          name="message"
+          placeholder="Briefly describe your stack, team, and what you’re exploring."
+          rows="4"
+          required
+          style="padding:0.65rem 0.8rem;border-radius:16px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;resize:vertical;"
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width:fit-content;">
+          Send message
+          <span class="chevron">↗</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- RIGHT: 정적 정보 (원하면 항목 추가/수정 가능) -->
+    <div>
+      <div class="contact-row">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Typical engagement</div>
+        <div class="contact-value">
+          Architecture review · Operating model design · Technical advisory
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>

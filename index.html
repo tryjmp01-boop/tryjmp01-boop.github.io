@@ -2,58 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tronex Engineering | Technology & Consulting Studio</title>
+  <title>Tronex Engineering | Technical Components Trading & Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Tronex Engineering is a technology & consulting studio that designs minimal, resilient engineering systems, platforms and processes." />
+        content="Tronex Engineering is a technical components trading and consulting partner, connecting reliable manufacturers and global buyers with engineering-grade components and systems." />
 
-  <!-- Basic reset & tokens -->
   <style>
     :root {
       --bg: #020817;
       --bg-alt: #020617;
-      --card: #020a1a;
-      --surface: #020617;
       --fg: #e5e7eb;
       --muted: #9ca3af;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.12);
       --border: #111827;
-      --border-soft: #0b1120;
-      --danger: #f97373;
       --max-width: 1120px;
       --radius-lg: 20px;
       --radius-xl: 26px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 48%, #020617 100%);
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #020617 100%);
       color: var(--fg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    /* Layout */
+    /* HEADER / NAV */
     header {
       position: sticky;
       top: 0;
       z-index: 40;
       border-bottom: 1px solid rgba(15,23,42,0.9);
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.08), transparent 45%),
-                  rgba(2,6,23,0.94);
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 50%),
+                  rgba(2,6,23,0.95);
       backdrop-filter: blur(18px);
     }
 
@@ -70,22 +57,13 @@
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
 
-    .logo-mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 30% 0, #38bdf8, #0f172a);
-      box-shadow: 0 0 0 1px rgba(15,23,42,0.8);
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #e5f5ff;
+    .logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
     }
 
     .logo-text {
@@ -105,7 +83,7 @@
       font-size: 0.7rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
     }
 
     .nav-links {
@@ -115,13 +93,8 @@
       font-size: 0.85rem;
     }
 
-    .nav-links a {
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--fg);
-    }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--fg); }
 
     .nav-cta {
       display: inline-flex;
@@ -143,7 +116,7 @@
       width: 16px;
       height: 16px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.9);
+      background: rgba(15,23,42,0.94);
       color: #e0f2fe;
       font-size: 0.7rem;
     }
@@ -172,9 +145,7 @@
       margin-bottom: 0.5rem;
     }
 
-    h1, h2, h3 {
-      font-weight: 600;
-    }
+    h1, h2, h3 { font-weight: 600; }
 
     h1 {
       font-size: clamp(2.2rem, 3.4vw, 3rem);
@@ -196,7 +167,7 @@
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
       gap: 2.25rem;
       align-items: center;
     }
@@ -208,7 +179,7 @@
       padding: 0.22rem 0.7rem;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.3);
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 58%);
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.28), transparent 60%);
       font-size: 0.75rem;
       color: var(--muted);
       margin-bottom: 0.9rem;
@@ -219,11 +190,11 @@
       height: 7px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.2);
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.24);
     }
 
     .hero-highlight {
-      background: linear-gradient(120deg,#38bdf8,#a855f7);
+      background: linear-gradient(120deg,#e5e7eb,#9ca3af);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -264,7 +235,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg,#0ea5e9,#22d3ee);
+      background: linear-gradient(135deg,#0ea5e9,#38bdf8);
       color: #020617;
       font-weight: 500;
       box-shadow: 0 10px 40px rgba(8,47,73,0.6);
@@ -286,9 +257,7 @@
       background: rgba(15,23,42,0.96);
     }
 
-    .btn .chevron {
-      font-size: 0.9rem;
-    }
+    .btn .chevron { font-size: 0.9rem; }
 
     .hero-footnote {
       font-size: 0.78rem;
@@ -298,8 +267,7 @@
     .hero-panel {
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 45%),
-                  radial-gradient(circle at 100% 0, rgba(168,85,247,0.18), transparent 45%),
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.3), transparent 50%),
                   rgba(15,23,42,0.98);
       padding: 1.65rem 1.45rem;
       font-size: 0.85rem;
@@ -355,6 +323,7 @@
       margin-top: 0.4rem;
       font-size: 0.78rem;
       color: var(--muted);
+      flex-wrap: wrap;
     }
 
     .chip {
@@ -376,7 +345,7 @@
       background: #38bdf8;
     }
 
-    /* LOGOS / TRUST */
+    /* TRUST */
     .trust {
       padding-top: 1rem;
     }
@@ -405,7 +374,7 @@
       background: rgba(15,23,42,0.7);
     }
 
-    /* SOLUTIONS / SECTIONS */
+    /* COMMON LAYOUT */
     .section-header {
       margin-bottom: 1.75rem;
       max-width: 36rem;
@@ -446,11 +415,8 @@
       color: var(--muted);
     }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
-    /* CARDS GRID */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3,minmax(0,1fr));
@@ -460,7 +426,7 @@
     .card {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.08), transparent 52%),
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.18), transparent 52%),
                   rgba(15,23,42,0.98);
       padding: 1.35rem 1.2rem;
       font-size: 0.9rem;
@@ -479,7 +445,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* METRICS STRIP */
     .metrics {
       display: grid;
       grid-template-columns: repeat(3,minmax(0,1fr));
@@ -512,8 +477,7 @@
     .contact-block {
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 52%),
-                  radial-gradient(circle at 100% 0, rgba(168,85,247,0.15), transparent 52%),
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.25), transparent 52%),
                   rgba(15,23,42,0.98);
       padding: 1.9rem 1.6rem;
       display: grid;
@@ -524,9 +488,7 @@
       box-shadow: 0 22px 70px rgba(15,23,42,0.9);
     }
 
-    .contact-row {
-      margin-bottom: 0.5rem;
-    }
+    .contact-row { margin-bottom: 0.5rem; }
 
     .contact-label {
       font-size: 0.75rem;
@@ -564,13 +526,8 @@
       gap: 0.75rem;
     }
 
-    .footer-links a {
-      color: var(--muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--fg);
-    }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--fg); }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -582,17 +539,9 @@
         grid-template-columns: minmax(0,1fr);
       }
 
-      header {
-        position: static;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      main {
-        padding-top: 2rem;
-      }
+      header { position: static; }
+      .nav-links { display: none; }
+      main { padding-top: 2rem; }
     }
 
     @media (max-width: 640px) {
@@ -608,10 +557,11 @@
   <header>
     <div class="nav-inner">
       <div class="logo-wrap">
-        <div class="logo-mark">TE</div>
+        <!-- 업로드한 로고 파일명에 맞게 src 수정 -->
+        <img src="logo-tronex.png" alt="Tronex Engineering logo" class="logo-img" />
         <div class="logo-text">
           <div class="logo-main">TRONEX ENGINEERING</div>
-          <div class="logo-sub">TECHNOLOGY & CONSULTING</div>
+          <div class="logo-sub">TECHNICAL COMPONENTS TRADING</div>
         </div>
       </div>
       <nav class="nav-links">
@@ -634,21 +584,23 @@
         <div>
           <div class="hero-eyebrow">
             <span class="hero-dot"></span>
-            <span>Engineering systems for modern operations</span>
+            <span>Engineering-grade components, traded with clarity</span>
           </div>
           <h1>
-            From fragmented stacks<br />
-            to <span class="hero-highlight">coherent engineering systems.</span>
+            Technical components trading<br />
+            with <span class="hero-highlight">engineering confidence.</span>
           </h1>
           <p class="hero-lead">
-            Tronex Engineering is a technology & consulting studio that designs
-            minimal, resilient architectures, workflows and operating models for
-            teams that rely on software, data and infrastructure to run their business.
+            Tronex Engineering connects global buyers with reliable
+            manufacturers of engineering-grade components&mdash;from
+            electronic and industrial parts to custom assemblies&mdash;backed
+            by technical understanding and structured communication.
           </p>
           <p class="hero-meta">
-            We sit between engineering and operations: translating strategy into
-            concrete system designs, and helping your teams deploy change
-            without disrupting day-to-day work.
+            We bridge the gap between commercial sourcing and engineering
+            reality: matching specifications, coordinating suppliers, and
+            simplifying cross-border trade so your teams can focus on product
+            and operations.
           </p>
 
           <div class="hero-actions">
@@ -657,44 +609,44 @@
               <span class="chevron">↗</span>
             </a>
             <a href="#solutions" class="btn btn-secondary">
-              Explore solutions
+              View trading & consulting solutions
             </a>
           </div>
           <div class="hero-footnote">
-            Built for CTOs, heads of engineering, and operations leaders who
-            need clarity before committing to the next platform or re-architecture.
+            Built for OEMs, integrators, and distributors who need a trusted
+            partner in Asia for technical components and supply coordination.
           </div>
         </div>
 
         <aside class="hero-panel" aria-label="Engagement snapshot">
           <div class="panel-header">
-            <div class="panel-title">Engagement Snapshot</div>
-            <span class="badge-soft">Engineering & Process Consulting</span>
+            <div class="panel-title">Trading & Consulting Snapshot</div>
+            <span class="badge-soft">Technical Components · B2B</span>
           </div>
 
           <div class="panel-grid">
             <div>
-              <div class="panel-label">Focus</div>
+              <div class="panel-label">Segments</div>
               <div class="panel-value">
-                Architecture reviews, platform strategy, technical due diligence
+                Industrial & electronic components, sub-assemblies, engineered parts
               </div>
             </div>
             <div>
-              <div class="panel-label">Typical scope</div>
+              <div class="panel-label">Role</div>
               <div class="panel-value">
-                6–12 week diagnostic, roadmap & operating model design
+                Sourcing, supplier coordination, technical communication, quality alignment
               </div>
             </div>
             <div>
-              <div class="panel-label">Best suited for</div>
+              <div class="panel-label">Clients</div>
               <div class="panel-value">
-                B2B / SaaS / infra-heavy teams from 20–500 engineers
+                Global OEMs, system integrators, regional distributors
               </div>
             </div>
             <div>
-              <div class="panel-label">Engagement style</div>
+              <div class="panel-label">Region</div>
               <div class="panel-value">
-                Embedded with your teams, remote-first, documentation-driven
+                Korea-based with Asia & Europe facing engagement
               </div>
             </div>
           </div>
@@ -702,7 +654,11 @@
           <div class="panel-metric-row">
             <span class="chip">
               <span class="chip-dot"></span>
-              Reduce operational load, not just infrastructure cost.
+              Engineering-driven review of specs, drawings and datasheets.
+            </span>
+            <span class="chip">
+              <span class="chip-dot"></span>
+              Single contact across manufacturers, languages and shipments.
             </span>
           </div>
         </aside>
@@ -711,10 +667,10 @@
       <div class="trust">
         <div class="trust-label">Where Tronex Engineering is most helpful</div>
         <div class="trust-logos">
-          <span class="trust-pill">Scaling product-led B2B companies</span>
-          <span class="trust-pill">Teams consolidating scattered tooling</span>
-          <span class="trust-pill">Orgs preparing for cloud or data platform shifts</span>
-          <span class="trust-pill">Leaders seeking an unbiased architecture review</span>
+          <span class="trust-pill">Sourcing hard-to-find or specialized parts</span>
+          <span class="trust-pill">Coordinating multiple Asian manufacturers</span>
+          <span class="trust-pill">Validating specs before volume commitments</span>
+          <span class="trust-pill">Building a reliable long-term components base</span>
         </div>
       </div>
     </section>
@@ -723,56 +679,54 @@
     <section id="solutions">
       <div class="section-header">
         <div class="kicker">Solutions</div>
-        <h2>Designed to connect technology, teams, and day-to-day operations</h2>
+        <h2>Technical trading and advisory around the parts that keep your systems running</h2>
         <p>
-          Instead of selling yet another tool, Tronex Engineering focuses on
-          how systems are stitched together: architecture, processes, and the
-          interfaces between teams.
+          We combine trading execution with engineering literacy&mdash;so that
+          drawings, datasheets and manufacturing constraints are correctly
+          understood before POs are issued and commitments are made.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <div class="card-tag">Architecture & Systems</div>
-          <div class="card-title">Platform & stack review</div>
+          <div class="card-tag">Components Trading</div>
+          <div class="card-title">Sourcing & supplier coordination</div>
           <p>
-            Independent assessment of your current architecture, failure modes,
-            and trade-offs. We map dependencies, surface risk, and propose a
-            staged roadmap that accounts for budget, hiring plans, and existing
-            vendor contracts.
+            Identify and qualify manufacturers for your required components,
+            manage RFQs and sampling, and coordinate production with an eye on
+            both technical fit and commercial terms.
           </p>
         </div>
         <div class="card">
-          <div class="card-tag">Process & Operating Model</div>
-          <div class="card-title">Engineering operating rhythms</div>
+          <div class="card-tag">Technical Interface</div>
+          <div class="card-title">Engineering communication & alignment</div>
           <p>
-            We design clear decision flows, ownership models, and review
-            cadences so that product, engineering, and operations can ship
-            safely without grinding on each other.
+            We help translate between your engineering team and factories:
+            clarifying tolerances, materials, test requirements and change
+            requests with structured, traceable communication.
           </p>
         </div>
         <div class="card">
-          <div class="card-tag">Advisory & Due Diligence</div>
-          <div class="card-title">Technical strategy & diligence</div>
+          <div class="card-tag">Advisory</div>
+          <div class="card-title">Components strategy & risk review</div>
           <p>
-            Support for board, leadership, or investment committees that need
-            a structured view of technology risk, platform fit, and long-term
-            sustainability before committing capital.
+            Independent advice on supplier mix, alternative components, and
+            risk exposure at the parts level, helping you avoid single points
+            of failure in your supply chain.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- APPROACH / PLATFORM -->
+    <!-- APPROACH -->
     <section id="platform">
       <div class="section-header">
         <div class="kicker">Approach</div>
-        <h2>A minimal “control tower” for your engineering systems</h2>
+        <h2>Structured like an engineering project, executed like a trading desk</h2>
         <p>
-          Flexport brings visibility to global logistics; Tronex Engineering applies
-          similar discipline to your internal systems. We give you a single,
-          coherent view of how architecture, workflows and teams interact –
-          then help you tune them for reliability and speed.
+          Tronex Engineering runs technical components trading with the same
+          discipline you expect from an engineering project: clear scope,
+          traceable decisions, and documented handovers.
         </p>
       </div>
 
@@ -780,35 +734,36 @@
         <div class="list">
           <div>
             <div class="list-title-row">
-              <div class="list-title">1. Map reality, not the org chart</div>
-              <span class="pill-small">Discovery</span>
+              <div class="list-title">1. Understand your system, not just the part</div>
+              <span class="pill-small">Context</span>
             </div>
             <p>
-              We interview teams, trace critical flows end-to-end, and document
-              “how work actually moves” through systems. The output: a concise
-              map of dependencies, handoffs, and breakpoints across your stack.
+              We start from the application: how the component behaves in your
+              system, what failure looks like, and which constraints matter
+              most&mdash;temperature, lifetime, certifications or regulatory regimes.
             </p>
           </div>
           <div>
             <div class="list-title-row">
-              <div class="list-title">2. Quantify friction & risk</div>
-              <span class="pill-small">Diagnostics</span>
+              <div class="list-title">2. Map options and trade-offs</div>
+              <span class="pill-small">Options</span>
             </div>
             <p>
-              Rather than generic best practices, we score concrete pain points:
-              latency for key workflows, failure recovery paths, manual work,
-              and coordination overhead between teams.
+              We surface realistic options&mdash;from exact equivalents to
+              re-qualified alternatives&mdash;with clear trade-offs in lead
+              time, pricing, performance and risk so you can decide with
+              confidence.
             </p>
           </div>
           <div>
             <div class="list-title-row">
-              <div class="list-title">3. Design minimal, staged change</div>
-              <span class="pill-small">Roadmap</span>
+              <div class="list-title">3. Execute with documented alignment</div>
+              <span class="pill-small">Execution</span>
             </div>
             <p>
-              We favour incremental steps that your teams can actually ship:
-              sequencing upgrades, decompositions, or consolidations so you can
-              realise value early without betting the company on a full rewrite.
+              All specs, test conditions and agreed changes are captured in
+              writing, reducing misunderstandings across time zones and keeping
+              engineering, procurement and suppliers aligned.
             </p>
           </div>
         </div>
@@ -816,151 +771,152 @@
         <div class="list">
           <div>
             <div class="list-title-row">
-              <div class="list-title">What you get</div>
+              <div class="list-title">What you can expect</div>
               <span class="pill-small">Deliverables</span>
             </div>
             <p>
-              · Architecture and dependency map<br />
-              · Risk register and priority call-outs<br />
-              · 6–18 month roadmap with trade-offs<br />
-              · Operating model & team interface design
+              · Structured RFQ and supplier comparison sheets<br />
+              · Component spec & risk summary for key parts<br />
+              · Communication log and decision history with factories<br />
+              · Recommended fallback options where possible
             </p>
           </div>
           <div>
             <div class="list-title-row">
-              <div class="list-title">How we work with your teams</div>
+              <div class="list-title">How we work</div>
               <span class="pill-small">Collaboration</span>
             </div>
             <p>
-              We join your existing tools and cadence – not the other way
-              around. Documentation is written so that future hires and
-              partners can understand decisions without sitting in the room.
+              We join your existing tools (email, shared docs) and keep a
+              single English-language thread that your global teams can
+              follow&mdash;engineering, operations and procurement included.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- METRICS / IMPACT -->
+    <!-- IMPACT -->
     <section id="metrics">
       <div class="section-header">
         <div class="kicker">Impact</div>
-        <h2>Clarity for leadership, leverage for teams</h2>
+        <h2>Less friction in sourcing, more confidence in components</h2>
         <p>
-          Our work is measured in avoided re-writes, fewer emergencies, and
-          clearer decision-making – not just slide decks.
+          Our impact is measured in fewer surprises: at the qualification
+          stage, in production, and when demand or supply changes faster than
+          expected.
         </p>
       </div>
 
       <div class="metrics">
         <div class="metric">
-          <div class="metric-label">Decision clarity</div>
-          <div class="metric-value">1 framework</div>
+          <div class="metric-label">Qualification clarity</div>
+          <div class="metric-value">Single view</div>
           <p class="muted">
-            A single decision playbook that aligns product, engineering and
-            operations when trade-offs appear.
+            Consolidated view of specs, tests and open points for each
+            component, instead of scattered emails across time zones.
           </p>
         </div>
         <div class="metric">
-          <div class="metric-label">Reduced drag</div>
-          <div class="metric-value">20–40%</div>
+          <div class="metric-label">Supplier risk</div>
+          <div class="metric-value">Reduced</div>
           <p class="muted">
-            Typical reduction in time spent on manual coordination, status
-            gathering and explaining system behaviour.
+            Better understanding of alternatives, lead times and dependency
+            risks before you are locked into a single source.
           </p>
         </div>
         <div class="metric">
-          <div class="metric-label">Implementation</div>
-          <div class="metric-value">6–12 weeks</div>
+          <div class="metric-label">Team effort</div>
+          <div class="metric-value">Focused</div>
           <p class="muted">
-            For a focused diagnostic and roadmap, with the option to stay
-            engaged through execution.
+            Your engineers spend more time on product and validation, less on
+            clarifying basic information or chasing updates.
           </p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-   <section id="contact">
-  <div class="section-header">
-    <div class="kicker">Contact</div>
-    <h2>Let’s map your engineering system together</h2>
-    <p>
-      Share a brief description of your stack, team, and what you are
-      considering – a re-platform, consolidation, or just a second opinion.
-      We’ll respond with suggested next steps and whether Tronex
-      Engineering is the right fit.
-    </p>
-  </div>
-
-  <div class="contact-block">
-    <!-- LEFT: 설명 + 폼 -->
-    <div>
-      <p>
-        Send a short note with context, diagrams if you have them, and any
-        timelines or constraints you’re working with. We usually respond
-        within two business days.
-      </p>
-
-      <!-- 이 폼이 humx1610@gmail.com 으로 전송됩니다 -->
-      <form
-        action="https://formsubmit.co/humx1610@gmail.com"
-        method="POST"
-        style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 360px;"
-      >
-        <!-- 봇/스팸 방지용 숨김 필드 -->
-        <input type="text" name="_honey" style="display:none">
-
-        <!-- formsubmit 기본 캡차 비활성화 -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- 전송 후 리다이렉트 위치 (지금은 다시 Contact 섹션으로) -->
-        <input type="hidden" name="_next" value="https://tronexengineering.co.kr#contact">
-
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-          style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Work email"
-          required
-          style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
-        />
-        <textarea
-          name="message"
-          placeholder="Briefly describe your stack, team, and what you’re exploring."
-          rows="4"
-          required
-          style="padding:0.65rem 0.8rem;border-radius:16px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;resize:vertical;"
-        ></textarea>
-
-        <button type="submit" class="btn btn-primary" style="width:fit-content;">
-          Send message
-          <span class="chevron">↗</span>
-        </button>
-      </form>
-    </div>
-
-    <!-- RIGHT: 정적 정보 (원하면 항목 추가/수정 가능) -->
-    <div>
-      <div class="contact-row">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
+    <section id="contact">
+      <div class="section-header">
+        <div class="kicker">Contact</div>
+        <h2>Talk to Tronex Engineering about your components and sourcing needs</h2>
+        <p>
+          Share a short overview of your product, key components and what you
+          are looking for&mdash;a new supplier, alternatives, or simply a
+          reliable partner in Korea to coordinate technical parts.
+        </p>
       </div>
-      <div class="contact-row">
-        <div class="contact-label">Typical engagement</div>
-        <div class="contact-value">
-          Architecture review · Operating model design · Technical advisory
+
+      <div class="contact-block">
+        <!-- LEFT: 설명 + 폼 -->
+        <div>
+          <p>
+            We typically respond within two business days. If you already have
+            drawings, datasheets or a preferred manufacturer list, mention it
+            in the message so we can respond more precisely.
+          </p>
+
+          <!-- 이 폼으로 제출된 내용은 humx1610@gmail.com 으로 전송 -->
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/humx1610@gmail.com"
+            method="POST"
+            style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 380px;"
+          >
+            <!-- 스팸 방지용 숨김 필드 -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- 기본 캡차 비활성화 -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- 메일 제목 -->
+            <input type="hidden" name="_subject" value="New inquiry from Tronex Engineering website">
+            <!-- 전송 후 리다이렉트 위치 -->
+            <input type="hidden" name="_next" value="https://tronexengineering.co.kr#contact">
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Work email"
+              required
+              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+            />
+            <textarea
+              name="message"
+              placeholder="Briefly describe your components, quantities, timelines, and what you’re exploring."
+              rows="4"
+              required
+              style="padding:0.65rem 0.8rem;border-radius:16px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;resize:vertical;"
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width:fit-content;">
+              Send message
+              <span class="chevron">↗</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT: 정적 정보 -->
+        <div>
+          <div class="contact-row">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Typical engagement</div>
+            <div class="contact-value">
+              Components sourcing · Supplier coordination · Technical advisory
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   </main>
 
   <footer>

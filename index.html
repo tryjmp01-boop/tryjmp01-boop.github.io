@@ -1,941 +1,938 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tronex Engineering | Technical Components Trading & Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Tronex Engineering is a technical components trading and consulting partner, connecting reliable manufacturers and global buyers with engineering-grade components and systems." />
-
-  <style>
-    /* CSS 코드는 이전과 동일하게 유지됩니다. */
-    :root {
-      --bg: #020817;
-      --bg-alt: #020617;
-      --fg: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --border: #111827;
-      --max-width: 1120px;
-      --radius-lg: 20px;
-      --radius-xl: 26px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #020617 100%);
-      color: var(--fg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* HEADER / NAV */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      border-bottom: 1px solid rgba(15,23,42,0.9);
-      background: radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 50%),
-                  rgba(2,6,23,0.95);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.85rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .logo-img {
-      height: 32px;
-      width: auto;
-      display: block;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.05rem;
-    }
-
-    .logo-main {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .logo-sub {
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a { color: var(--muted); }
-    .nav-links a:hover { color: var(--fg); }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      border: 1px solid rgba(56,189,248,0.8);
-      background: linear-gradient(135deg,#0ea5e9,#22d3ee);
-      color: #0b1120;
-      font-weight: 500;
-    }
-
-    .nav-cta span.icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.94);
-      color: #e0f2fe;
-      font-size: 0.7rem;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2.75rem 1.25rem 3.5rem;
-    }
-
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid rgba(15,23,42,0.85);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .kicker {
-      font-size: 0.75rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    h1, h2, h3 { font-weight: 600; }
-
-    h1 {
-      font-size: clamp(2.2rem, 3.4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-      color: #d1d5db;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 2.25rem;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.22rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.3);
-      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.28), transparent 60%);
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.24);
-    }
-
-    .hero-highlight {
-      background: linear-gradient(120deg,#e5e7eb,#9ca3af);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-lead {
-      font-size: 1rem;
-      margin-bottom: 1.4rem;
-      color: #e5e7eb;
-      max-width: 32rem;
-    }
-
-    .hero-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      max-width: 30rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.6rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      padding: 0.65rem 1.25rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg,#0ea5e9,#38bdf8);
-      color: #020617;
-      font-weight: 500;
-      box-shadow: 0 10px 40px rgba(8,47,73,0.6);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 45px rgba(8,47,73,0.9);
-    }
-
-    .btn-secondary {
-      background: rgba(15,23,42,0.9);
-      border-color: rgba(148,163,184,0.45);
-      color: #e5e7eb;
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(148,163,184,0.75);
-      background: rgba(15,23,42,0.96);
-    }
-
-    .btn .chevron { font-size: 0.9rem; }
-
-    .hero-footnote {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .hero-panel {
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.3), transparent 50%),
-                  rgba(15,23,42,0.98);
-      padding: 1.65rem 1.45rem;
-      font-size: 0.85rem;
-      box-shadow:
-        0 24px 80px rgba(15,23,42,0.9),
-        0 0 0 1px rgba(15,23,42,0.9);
-    }
-
-    /* --- [새로 추가된 HERO 이미지 컨테이너] --- */
-    .hero-image-placeholder {
-      width: 100%;
-      height: 320px; /* 높이 조절 */
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: url('https://via.placeholder.com/600x320/0f172a/94a3b8?text=Technical+Component+Image') no-repeat center center/cover;
-      margin-bottom: 1.5rem;
-    }
-    /* --- [새로 추가된 HERO 이미지 컨테이너] --- */
-
-
-    .panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .panel-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .badge-soft {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      background: rgba(15,23,42,0.8);
-      color: var(--muted);
-    }
-
-    .panel-grid {
-      display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 0.8rem 1.1rem;
-      margin-bottom: 1.1rem;
-    }
-
-    .panel-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .panel-value {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .panel-metric-row {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      flex-wrap: wrap;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.22rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.35);
-      background: rgba(15,23,42,0.85);
-      font-size: 0.75rem;
-      color: #e5e7eb;
-    }
-
-    .chip-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      margin-right: 0.3rem;
-      background: #38bdf8;
-    }
-
-    /* TRUST */
-    .trust {
-      padding-top: 1rem;
-    }
-
-    .trust-label {
-      font-size: 0.76rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.7rem;
-    }
-
-    .trust-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-
-    .trust-pill {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      padding: 0.35rem 0.9rem;
-      background: rgba(15,23,42,0.7);
-    }
-
-    /* COMMON LAYOUT */
-    .section-header {
-      margin-bottom: 1.75rem;
-      max-width: 36rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1.6fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.15rem;
-      font-size: 0.9rem;
-    }
-
-    .list-title-row {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .list-title {
-      font-weight: 500;
-    }
-
-    .pill-small {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .muted { color: var(--muted); }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 1.3rem;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.18), transparent 52%),
-                  rgba(15,23,42,0.98);
-      padding: 1.35rem 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .card-tag {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .card-title {
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 1.4rem;
-    }
-
-    .metric {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.95);
-      padding: 1rem 1.1rem;
-      font-size: 0.85rem;
-    }
-
-    .metric-value {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      color: #e5e7eb;
-    }
-
-    .metric-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    /* CONTACT */
-    .contact-block {
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.25), transparent 52%),
-                  rgba(15,23,42,0.98);
-      padding: 1.9rem 1.6rem;
-      display: grid;
-      grid-template-columns: minmax(0,2fr) minmax(0,1.5fr);
-      gap: 1.6rem;
-      align-items: center;
-      font-size: 0.9rem;
-      box-shadow: 0 22px 70px rgba(15,23,42,0.9);
-    }
-
-    .contact-row { margin-bottom: 0.5rem; }
-
-    .contact-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.15rem;
-    }
-
-    .contact-value {
-      font-weight: 500;
-      color: #e5e7eb;
-    }
-
-    footer {
-      border-top: 1px solid rgba(15,23,42,0.9);
-      padding: 1.8rem 1.25rem 2.4rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .footer-links a { color: var(--muted); }
-    .footer-links a:hover { color: var(--fg); }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero,
-      .two-col,
-      .grid-3,
-      .metrics,
-      .contact-block {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      header { position: static; }
-      .nav-links { display: none; }
-      main { padding-top: 2rem; }
-    }
-
-    @media (max-width: 640px) {
-      h1 { font-size: 1.95rem; }
-      .hero-panel { margin-top: 0.5rem; }
-      .card,
-      .metric { font-size: 0.86rem; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Tronex Engineering | Technical Components Trading & Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Tronex Engineering is a technical components trading and consulting partner, connecting reliable manufacturers and global buyers with engineering-grade components and systems." />
+
+  <style>
+    :root {
+      --bg: #020817;
+      --bg-alt: #020617;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #111827;
+      --max-width: 1120px;
+      --radius-lg: 20px;
+      --radius-xl: 26px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #020617 100%);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 50%),
+                  rgba(2,6,23,0.95);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .logo-main {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--fg); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(56,189,248,0.8);
+      background: linear-gradient(135deg,#0ea5e9,#22d3ee);
+      color: #0b1120;
+      font-weight: 500;
+    }
+
+    .nav-cta span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.94);
+      color: #e0f2fe;
+      font-size: 0.7rem;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.75rem 1.25rem 3.5rem;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(15,23,42,0.85);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1, h2, h3 { font-weight: 600; }
+
+    h1 {
+      font-size: clamp(2.2rem, 3.4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.3);
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.28), transparent 60%);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.24);
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg,#e5e7eb,#9ca3af);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+      margin-bottom: 1.4rem;
+      color: #e5e7eb;
+      max-width: 32rem;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,#0ea5e9,#38bdf8);
+      color: #020617;
+      font-weight: 500;
+      box-shadow: 0 10px 40px rgba(8,47,73,0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 45px rgba(8,47,73,0.9);
+    }
+
+    .btn-secondary {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148,163,184,0.45);
+      color: #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(148,163,184,0.75);
+      background: rgba(15,23,42,0.96);
+    }
+
+    .btn .chevron { font-size: 0.9rem; }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.3), transparent 50%),
+                  rgba(15,23,42,0.98);
+      padding: 1.65rem 1.45rem;
+      font-size: 0.85rem;
+      box-shadow:
+        0 24px 80px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.9);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .panel-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .badge-soft {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.8);
+      color: var(--muted);
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 0.8rem 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .panel-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .panel-value {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .panel-metric-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.85);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-right: 0.3rem;
+      background: #38bdf8;
+    }
+
+    /* TRUST */
+    .trust {
+      padding-top: 1rem;
+    }
+
+    .trust-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .trust-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .trust-pill {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 0.35rem 0.9rem;
+      background: rgba(15,23,42,0.7);
+    }
+
+    /* COMMON LAYOUT */
+    .section-header {
+      margin-bottom: 1.75rem;
+      max-width: 36rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1.6fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      font-size: 0.9rem;
+    }
+
+    .list-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .list-title {
+      font-weight: 500;
+    }
+
+    .pill-small {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.18), transparent 52%),
+                  rgba(15,23,42,0.98);
+      padding: 1.35rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .card-title {
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.4rem;
+    }
+
+    .metric {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.95);
+      padding: 1rem 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .metric-value {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #e5e7eb;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    .contact-block {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at 0 0, rgba(148,163,184,0.25), transparent 52%),
+                  rgba(15,23,42,0.98);
+      padding: 1.9rem 1.6rem;
+      display: grid;
+      grid-template-columns: minmax(0,2fr) minmax(0,1.5fr);
+      gap: 1.6rem;
+      align-items: center;
+      font-size: 0.9rem;
+      box-shadow: 0 22px 70px rgba(15,23,42,0.9);
+    }
+
+    .contact-row { margin-bottom: 0.5rem; }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-value {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.9);
+      padding: 1.8rem 1.25rem 2.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--fg); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .grid-3,
+      .metrics,
+      .contact-block {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      header { position: static; }
+      .nav-links { display: none; }
+      main { padding-top: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.95rem; }
+      .hero-panel { margin-top: 0.5rem; }
+      .card,
+      .metric { font-size: 0.86rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-    <div class="nav-inner">
-      <div class="logo-wrap">
-                <img src="logo-tronex.png" alt="Tronex Engineering logo" class="logo-img" />
-        <div class="logo-text">
-          <div class="logo-main">TRONEX ENGINEERING</div>
-          <div class="logo-sub">TECHNICAL COMPONENTS TRADING</div>
-        </div>
-        
-      </div>
-      <nav class="nav-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#platform">Approach</a>
-        <a href="#metrics">Impact</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="#contact" class="nav-cta">
-        Talk to an expert
-        <span class="icon">→</span>
-      </a>
-    </div>
-  </header>
+  <!-- NAV -->
+  <header>
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <!-- 업로드한 로고 파일명에 맞게 src 수정 -->
+        <img src="logo-tronex.png" alt="Tronex Engineering logo" class="logo-img" />
+        <div class="logo-text">
+          <div class="logo-main">TRONEX ENGINEERING</div>
+          <div class="logo-sub">TECHNICAL COMPONENTS TRADING</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#platform">Approach</a>
+        <a href="#metrics">Impact</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">
+        Talk to an expert
+        <span class="icon">→</span>
+      </a>
+    </div>
+  </header>
 
-  <main>
-        <section id="top">
-      <div class="hero">
-        <div>
-          <div class="hero-eyebrow">
-            <span class="hero-dot"></span>
-            <span>Engineering-grade components, traded with clarity</span>
-          </div>
-          <h1>
-            Technical components trading<br />
-            with <span class="hero-highlight">engineering confidence.</span>
-          </h1>
-          <p class="hero-lead">
-            Tronex Engineering connects global buyers with reliable
-            manufacturers of engineering-grade components&mdash;from
-            electronic and industrial parts to custom assemblies&mdash;backed
-            by technical understanding and structured communication.
-          </p>
-          <p class="hero-meta">
-            We bridge the gap between commercial sourcing and engineering
-            reality: matching specifications, coordinating suppliers, and
-            simplifying cross-border trade so your teams can focus on product
-            and operations.
-          </p>
+  <main>
+    <!-- HERO -->
+    <section id="top">
+      <div class="hero">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="hero-dot"></span>
+            <span>Engineering-grade components, traded with clarity</span>
+          </div>
+          <h1>
+            Technical components trading<br />
+            with <span class="hero-highlight">engineering confidence.</span>
+          </h1>
+          <p class="hero-lead">
+            Tronex Engineering connects global buyers with reliable
+            manufacturers of engineering-grade components&mdash;from
+            electronic and industrial parts to custom assemblies&mdash;backed
+            by technical understanding and structured communication.
+          </p>
+          <p class="hero-meta">
+            We bridge the gap between commercial sourcing and engineering
+            reality: matching specifications, coordinating suppliers, and
+            simplifying cross-border trade so your teams can focus on product
+            and operations.
+          </p>
 
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">
-              Talk to an expert
-              <span class="chevron">↗</span>
-            </a>
-            <a href="#solutions" class="btn btn-secondary">
-              View trading & consulting solutions
-            </a>
-          </div>
-          <div class="hero-footnote">
-            Built for OEMs, integrators, and distributors who need a trusted
-            partner in Asia for technical components and supply coordination.
-          </div>
-        </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Talk to an expert
+              <span class="chevron">↗</span>
+            </a>
+            <a href="#solutions" class="btn btn-secondary">
+              View trading & consulting solutions
+            </a>
+          </div>
+          <div class="hero-footnote">
+            Built for OEMs, integrators, and distributors who need a trusted
+            partner in Asia for technical components and supply coordination.
+          </div>
+        </div>
 
-        <aside aria-label="Engagement snapshot">
-                    <div class="hero-image-placeholder"></div>
-                              <div class="hero-panel">
-            <div class="panel-header">
-              <div class="panel-title">Trading & Consulting Snapshot</div>
-              <span class="badge-soft">Technical Components · B2B</span>
-            </div>
+        <aside class="hero-panel" aria-label="Engagement snapshot">
+          <div class="panel-header">
+            <div class="panel-title">Trading & Consulting Snapshot</div>
+            <span class="badge-soft">Technical Components · B2B</span>
+          </div>
 
-            <div class="panel-grid">
-              <div>
-                <div class="panel-label">Segments</div>
-                <div class="panel-value">
-                  Industrial & electronic components, sub-assemblies, engineered parts
-                </div>
-              </div>
-              <div>
-                <div class="panel-label">Role</div>
-                <div class="panel-value">
-                  Sourcing, supplier coordination, technical communication, quality alignment
-                </div>
-              </div>
-              <div>
-                <div class="panel-label">Clients</div>
-                <div class="panel-value">
-                  Global OEMs, system integrators, regional distributors
-                </div>
-              </div>
-              <div>
-                <div class="panel-label">Region</div>
-                <div class="panel-value">
-                  Korea-based with Asia & Europe facing engagement
-                </div>
-              </div>
-            </div>
+          <div class="panel-grid">
+            <div>
+              <div class="panel-label">Segments</div>
+              <div class="panel-value">
+                Industrial & electronic components, sub-assemblies, engineered parts
+              </div>
+            </div>
+            <div>
+              <div class="panel-label">Role</div>
+              <div class="panel-value">
+                Sourcing, supplier coordination, technical communication, quality alignment
+              </div>
+            </div>
+            <div>
+              <div class="panel-label">Clients</div>
+              <div class="panel-value">
+                Global OEMs, system integrators, regional distributors
+              </div>
+            </div>
+            <div>
+              <div class="panel-label">Region</div>
+              <div class="panel-value">
+                Korea-based with Asia & Europe facing engagement
+              </div>
+            </div>
+          </div>
 
-            <div class="panel-metric-row">
-              <span class="chip">
-                <span class="chip-dot"></span>
-                Engineering-driven review of specs, drawings and datasheets.
-              </span>
-              <span class="chip">
-                <span class="chip-dot"></span>
-                Single contact across manufacturers, languages and shipments.
-              </span>
-            </div>
-          </div>
-        </aside>
-      </div>
+          <div class="panel-metric-row">
+            <span class="chip">
+              <span class="chip-dot"></span>
+              Engineering-driven review of specs, drawings and datasheets.
+            </span>
+            <span class="chip">
+              <span class="chip-dot"></span>
+              Single contact across manufacturers, languages and shipments.
+            </span>
+          </div>
+        </aside>
+      </div>
 
-      <div class="trust">
-        <div class="trust-label">Where Tronex Engineering is most helpful</div>
-        <div class="trust-logos">
-          <span class="trust-pill">Sourcing hard-to-find or specialized parts</span>
-          <span class="trust-pill">Coordinating multiple Asian manufacturers</span>
-          <span class="trust-pill">Validating specs before volume commitments</span>
-          <span class="trust-pill">Building a reliable long-term components base</span>
-        </div>
-      </div>
-    </section>
+      <div class="trust">
+        <div class="trust-label">Where Tronex Engineering is most helpful</div>
+        <div class="trust-logos">
+          <span class="trust-pill">Sourcing hard-to-find or specialized parts</span>
+          <span class="trust-pill">Coordinating multiple Asian manufacturers</span>
+          <span class="trust-pill">Validating specs before volume commitments</span>
+          <span class="trust-pill">Building a reliable long-term components base</span>
+        </div>
+      </div>
+    </section>
 
-        <section id="solutions">
-      <div class="section-header">
-        <div class="kicker">Solutions</div>
-        <h2>Technical trading and advisory around the parts that keep your systems running</h2>
-        <p>
-          We combine trading execution with engineering literacy&mdash;so that
-          drawings, datasheets and manufacturing constraints are correctly
-          understood before POs are issued and commitments are made.
-        </p>
-      </div>
+    <!-- SOLUTIONS -->
+    <section id="solutions">
+      <div class="section-header">
+        <div class="kicker">Solutions</div>
+        <h2>Technical trading and advisory around the parts that keep your systems running</h2>
+        <p>
+          We combine trading execution with engineering literacy&mdash;so that
+          drawings, datasheets and manufacturing constraints are correctly
+          understood before POs are issued and commitments are made.
+        </p>
+      </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-tag">Components Trading</div>
-          <div class="card-title">Sourcing & supplier coordination</div>
-          <p>
-            Identify and qualify manufacturers for your required components,
-            manage RFQs and sampling, and coordinate production with an eye on
-            both technical fit and commercial terms.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Technical Interface</div>
-          <div class="card-title">Engineering communication & alignment</div>
-          <p>
-            We help translate between your engineering team and factories:
-            clarifying tolerances, materials, test requirements and change
-            requests with structured, traceable communication.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Advisory</div>
-          <div class="card-title">Components strategy & risk review</div>
-          <p>
-            Independent advice on supplier mix, alternative components, and
-            risk exposure at the parts level, helping you avoid single points
-            of failure in your supply chain.
-          </p>
-        </div>
-      </div>
-    </section>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-tag">Components Trading</div>
+          <div class="card-title">Sourcing & supplier coordination</div>
+          <p>
+            Identify and qualify manufacturers for your required components,
+            manage RFQs and sampling, and coordinate production with an eye on
+            both technical fit and commercial terms.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Technical Interface</div>
+          <div class="card-title">Engineering communication & alignment</div>
+          <p>
+            We help translate between your engineering team and factories:
+            clarifying tolerances, materials, test requirements and change
+            requests with structured, traceable communication.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Advisory</div>
+          <div class="card-title">Components strategy & risk review</div>
+          <p>
+            Independent advice on supplier mix, alternative components, and
+            risk exposure at the parts level, helping you avoid single points
+            of failure in your supply chain.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section id="platform">
-      <div class="section-header">
-        <div class="kicker">Approach</div>
-        <h2>Structured like an engineering project, executed like a trading desk</h2>
-        <p>
-          Tronex Engineering runs technical components trading with the same
-          discipline you expect from an engineering project: clear scope,
-          traceable decisions, and documented handovers.
-        </p>
-      </div>
+    <!-- APPROACH -->
+    <section id="platform">
+      <div class="section-header">
+        <div class="kicker">Approach</div>
+        <h2>Structured like an engineering project, executed like a trading desk</h2>
+        <p>
+          Tronex Engineering runs technical components trading with the same
+          discipline you expect from an engineering project: clear scope,
+          traceable decisions, and documented handovers.
+        </p>
+      </div>
 
-      <div class="two-col">
-        <div class="list">
-          <div>
-            <div class="list-title-row">
-              <div class="list-title">1. Understand your system, not just the part</div>
-              <span class="pill-small">Context</span>
-            </div>
-            <p>
-              We start from the application: how the component behaves in your
-              system, what failure looks like, and which constraints matter
-              most&mdash;temperature, lifetime, certifications or regulatory regimes.
-            </p>
-          </div>
-          <div>
-            <div class="list-title-row">
-              <div class="list-title">2. Map options and trade-offs</div>
-              <span class="pill-small">Options</span>
-            </div>
-            <p>
-              We surface realistic options&mdash;from exact equivalents to
-              re-qualified alternatives&mdash;with clear trade-offs in lead
-              time, pricing, performance and risk so you can decide with
-              confidence.
-            </p>
-          </div>
-          <div>
-            <div class="list-title-row">
-              <div class="list-title">3. Execute with documented alignment</div>
-              <span class="pill-small">Execution</span>
-            </div>
-            <p>
-              All specs, test conditions and agreed changes are captured in
-              writing, reducing misunderstandings across time zones and keeping
-              engineering, procurement and suppliers aligned.
-            </p>
-          </div>
-        </div>
+      <div class="two-col">
+        <div class="list">
+          <div>
+            <div class="list-title-row">
+              <div class="list-title">1. Understand your system, not just the part</div>
+              <span class="pill-small">Context</span>
+            </div>
+            <p>
+              We start from the application: how the component behaves in your
+              system, what failure looks like, and which constraints matter
+              most&mdash;temperature, lifetime, certifications or regulatory regimes.
+            </p>
+          </div>
+          <div>
+            <div class="list-title-row">
+              <div class="list-title">2. Map options and trade-offs</div>
+              <span class="pill-small">Options</span>
+            </div>
+            <p>
+              We surface realistic options&mdash;from exact equivalents to
+              re-qualified alternatives&mdash;with clear trade-offs in lead
+              time, pricing, performance and risk so you can decide with
+              confidence.
+            </p>
+          </div>
+          <div>
+            <div class="list-title-row">
+              <div class="list-title">3. Execute with documented alignment</div>
+              <span class="pill-small">Execution</span>
+            </div>
+            <p>
+              All specs, test conditions and agreed changes are captured in
+              writing, reducing misunderstandings across time zones and keeping
+              engineering, procurement and suppliers aligned.
+            </p>
+          </div>
+        </div>
 
-        <div class="list">
-          <div>
-            <div class="list-title-row">
-              <div class="list-title">What you can expect</div>
-              <span class="pill-small">Deliverables</span>
-            </div>
-            <p>
-              · Structured RFQ and supplier comparison sheets<br />
-              · Component spec & risk summary for key parts<br />
-              · Communication log and decision history with factories<br />
-              · Recommended fallback options where possible
-            </p>
-          </div>
-          <div>
-            <div class="list-title-row">
-              <div class="list-title">How we work</div>
-              <span class="pill-small">Collaboration</span>
-            </div>
-            <p>
-              We join your existing tools (email, shared docs) and keep a
-              single English-language thread that your global teams can
-              follow&mdash;engineering, operations and procurement included.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="list">
+          <div>
+            <div class="list-title-row">
+              <div class="list-title">What you can expect</div>
+              <span class="pill-small">Deliverables</span>
+            </div>
+            <p>
+              · Structured RFQ and supplier comparison sheets<br />
+              · Component spec & risk summary for key parts<br />
+              · Communication log and decision history with factories<br />
+              · Recommended fallback options where possible
+            </p>
+          </div>
+          <div>
+            <div class="list-title-row">
+              <div class="list-title">How we work</div>
+              <span class="pill-small">Collaboration</span>
+            </div>
+            <p>
+              We join your existing tools (email, shared docs) and keep a
+              single English-language thread that your global teams can
+              follow&mdash;engineering, operations and procurement included.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="metrics">
-      <div class="section-header">
-        <div class="kicker">Impact</div>
-        <h2>Less friction in sourcing, more confidence in components</h2>
-        <p>
-          Our impact is measured in fewer surprises: at the qualification
-          stage, in production, and when demand or supply changes faster than
-          expected.
-        </p>
-      </div>
+    <!-- IMPACT -->
+    <section id="metrics">
+      <div class="section-header">
+        <div class="kicker">Impact</div>
+        <h2>Less friction in sourcing, more confidence in components</h2>
+        <p>
+          Our impact is measured in fewer surprises: at the qualification
+          stage, in production, and when demand or supply changes faster than
+          expected.
+        </p>
+      </div>
 
-      <div class="metrics">
-        <div class="metric">
-          <div class="metric-label">Qualification clarity</div>
-          <div class="metric-value">Single view</div>
-          <p class="muted">
-            Consolidated view of specs, tests and open points for each
-            component, instead of scattered emails across time zones.
-          </p>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Supplier risk</div>
-          <div class="metric-value">Reduced</div>
-          <p class="muted">
-            Better understanding of alternatives, lead times and dependency
-            risks before you are locked into a single source.
-          </p>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Team effort</div>
-          <div class="metric-value">Focused</div>
-          <p class="muted">
-            Your engineers spend more time on product and validation, less on
-            clarifying basic information or chasing updates.
-          </p>
-        </div>
-      </div>
-    </section>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Qualification clarity</div>
+          <div class="metric-value">Single view</div>
+          <p class="muted">
+            Consolidated view of specs, tests and open points for each
+            component, instead of scattered emails across time zones.
+          </p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Supplier risk</div>
+          <div class="metric-value">Reduced</div>
+          <p class="muted">
+            Better understanding of alternatives, lead times and dependency
+            risks before you are locked into a single source.
+          </p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Team effort</div>
+          <div class="metric-value">Focused</div>
+          <p class="muted">
+            Your engineers spend more time on product and validation, less on
+            clarifying basic information or chasing updates.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section id="contact">
-      <div class="section-header">
-        <div class="kicker">Contact</div>
-        <h2>Talk to Tronex Engineering about your components and sourcing needs</h2>
-        <p>
-          Share a short overview of your product, key components and what you
-          are looking for&mdash;a new supplier, alternatives, or simply a
-          reliable partner in Korea to coordinate technical parts.
-        </p>
-      </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="kicker">Contact</div>
+        <h2>Talk to Tronex Engineering about your components and sourcing needs</h2>
+        <p>
+          Share a short overview of your product, key components and what you
+          are looking for&mdash;a new supplier, alternatives, or simply a
+          reliable partner in Korea to coordinate technical parts.
+        </p>
+      </div>
 
-      <div class="contact-block">
-                <div>
-          <p>
-            We typically respond within two business days. If you already have
-            drawings, datasheets or a preferred manufacturer list, mention it
-            in the message so we can respond more precisely.
-          </p>
+      <div class="contact-block">
+        <!-- LEFT: 설명 + 폼 -->
+        <div>
+          <p>
+            We typically respond within two business days. If you already have
+            drawings, datasheets or a preferred manufacturer list, mention it
+            in the message so we can respond more precisely.
+          </p>
 
-                    <form
-            id="contact-form"
-            action="https://formsubmit.co/humx1610@gmail.com"
-            method="POST"
-            style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 380px;"
-          >
-                        <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="New inquiry from Tronex Engineering website">
-                        <input type="hidden" name="_next" value="https://tronexengineering.co.kr#contact">
+          <!-- 이 폼으로 제출된 내용은 humx1610@gmail.com 으로 전송 -->
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/humx1610@gmail.com"
+            method="POST"
+            style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; max-width: 380px;"
+          >
+            <!-- 스팸 방지용 숨김 필드 -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- 기본 캡차 비활성화 -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- 메일 제목 -->
+            <input type="hidden" name="_subject" value="New inquiry from Tronex Engineering website">
+            <!-- 전송 후 리다이렉트 위치 -->
+            <input type="hidden" name="_next" value="https://tronexengineering.co.kr#contact">
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Work email"
-              required
-              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
-            />
-            <textarea
-              name="message"
-              placeholder="Briefly describe your components, quantities, timelines, and what you’re exploring."
-              rows="4"
-              required
-              style="padding:0.65rem 0.8rem;border-radius:16px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;resize:vertical;"
-            ></textarea>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Work email"
+              required
+              style="padding:0.55rem 0.75rem;border-radius:999px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;"
+            />
+            <textarea
+              name="message"
+              placeholder="Briefly describe your components, quantities, timelines, and what you’re exploring."
+              rows="4"
+              required
+              style="padding:0.65rem 0.8rem;border-radius:16px;border:1px solid rgba(148,163,184,0.45);background:rgba(15,23,42,0.9);color:#e5e7eb;font-size:0.85rem;resize:vertical;"
+            ></textarea>
 
-            <button type="submit" class="btn btn-primary" style="width:fit-content;">
-              Send message
-              <span class="chevron">↗</span>
-            </button>
-          </form>
-        </div>
+            <button type="submit" class="btn btn-primary" style="width:fit-content;">
+              Send message
+              <span class="chevron">↗</span>
+            </button>
+          </form>
+        </div>
 
-                <div>
-          <div class="contact-row">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Typical engagement</div>
-            <div class="contact-value">
-              Components sourcing · Supplier coordination · Technical advisory
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        <!-- RIGHT: 정적 정보 -->
+        <div>
+          <div class="contact-row">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Seoul, Republic of Korea · Remote-first</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Typical engagement</div>
+            <div class="contact-value">
+              Components sourcing · Supplier coordination · Technical advisory
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Tronex Engineering. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#solutions">Solutions</a>
-        <span>·</span>
-        <a href="#platform">Approach</a>
-        <span>·</span>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </footer>
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Tronex Engineering. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#solutions">Solutions</a>
+        <span>·</span>
+        <a href="#platform">Approach</a>
+        <span>·</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
